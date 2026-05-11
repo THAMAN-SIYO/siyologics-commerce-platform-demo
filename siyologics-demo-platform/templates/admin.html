@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-wrapper">
+
+  <div class="container">
+
+    <div class="admin-page">
+
+      <!-- HEADER -->
+      <div class="admin-header fade-up">
+
+        <span class="section-tag">
+          Dashboard
+        </span>
+
+        <h2>Admin Overview</h2>
+
+        <p>
+
+          Demo dashboard interface showcasing
+          inventory, order management,
+          and operational workflows.
+
+        </p>
+
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="kpi-row fade-up">
+
+        <div class="kpi-card">
+
+          <h4>Total Orders</h4>
+
+          <div class="kpi-value">
+            {{ total_orders }}
+          </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+          <h4>Total Revenue</h4>
+
+          <div class="kpi-value">
+            ₹{{ "{:,}".format(total_revenue) }}
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- INVENTORY -->
+      <div class="admin-section fade-up">
+
+        <h3>📦 Inventory Status</h3>
+
+        <table class="dashboard-table">
+
+          <thead>
+
+            <tr>
+              <th>Product</th>
+              <th>Available Units</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            {% for s in stock %}
+            <tr>
+
+              <td>{{ s[1] }}</td>
+
+              <td>
+
+                <span style="font-weight:700;
+                  color:
+                  {% if s[2] < 5 %}var(--danger)
+                  {% elif s[2] < 20 %}var(--warning)
+                  {% else %}var(--success)
+                  {% endif %};">
+
+                  {{ s[2] }} units
+
+                </span>
+
+                {% if s[2] < 5 %}
+
+                  <span class="badge failed"
+                        style="margin-left:8px;">
+
+                    Low Stock
+
+                  </span>
+
+                {% elif s[2] < 20 %}
+
+                  <span class="badge pending"
+                        style="margin-left:8px;">
+
+                    Limited
+
+                  </span>
+
+                {% endif %}
+
+              </td>
+
+            </tr>
+            {% endfor %}
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- RECENT ORDERS -->
+      <div class="admin-section fade-up">
+
+        <h3>🛒 Recent Orders</h3>
+
+        <table class="dashboard-table">
+
+          <thead>
+
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Qty</th>
+              <th>Amount</th>
+              <th>Payment</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            {% for o in orders %}
+            <tr>
+
+              <td>
+                <strong>#{{ o[0] }}</strong>
+              </td>
+
+              <td>{{ o[1] }}</td>
+
+              <td>{{ o[2] }}</td>
+
+              <td>
+                <strong>₹{{ o[3] }}</strong>
+              </td>
+
+              <!-- PAYMENT -->
+              <td>
+
+                {% if o[4] == 'paid' %}
+
+                  <span class="badge paid">
+                    Paid
+                  </span>
+
+                {% elif o[4] == 'failed' %}
+
+                  <span class="badge failed">
+                    Failed
+                  </span>
+
+                {% else %}
+
+                  <span class="badge pending">
+                    Pending
+                  </span>
+
+                {% endif %}
+
+              </td>
+
+              <!-- ORDER STATUS -->
+              <td>
+
+                {% if o[5] == 'CONFIRMED' %}
+                  🟦 Confirmed
+
+                {% elif o[5] == 'PACKED' %}
+                  📦 Packed
+
+                {% elif o[5] == 'SHIPPED' %}
+                  🚚 Shipped
+
+                {% elif o[5] == 'DELIVERED' %}
+                  ✅ Delivered
+
+                {% else %}
+                  —
+
+                {% endif %}
+
+              </td>
+
+              <!-- DATE -->
+              <td style="white-space:nowrap;
+                         font-size:.82rem;">
+
+                {{ o[7] }}
+
+              </td>
+
+            </tr>
+            {% endfor %}
+
+            {% if not orders %}
+            <tr>
+
+              <td colspan="7"
+                  style="text-align:center;
+                         padding:32px;
+                         color:var(--ink-faint);">
+
+                No orders available.
+
+              </td>
+
+            </tr>
+            {% endif %}
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- MANAGEMENT SECTION -->
+      <div style="display:grid;
+                  grid-template-columns:1fr 1fr;
+                  gap:var(--space-lg);"
+           class="fade-up">
+
+        <!-- STOCK -->
+        <div class="admin-section">
+
+          <h3>➕ Inventory Update</h3>
+
+          <form method="POST"
+                action="/admin/add-stock">
+
+            <div class="form-group">
+
+              <label for="product_id">
+                Product
+              </label>
+
+              <select id="product_id"
+                      name="product_id"
+                      required>
+
+                {% for p in products %}
+
+                <option value="{{ p[0] }}">
+                  {{ p[1] }}
+                </option>
+
+                {% endfor %}
+
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="quantity">
+                Quantity
+              </label>
+
+              <input type="number"
+                     id="quantity"
+                     name="quantity"
+                     min="1"
+                     placeholder="e.g. 50"
+                     required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary">
+
+              Update Inventory
+
+            </button>
+
+          </form>
+
+        </div>
+
+        <!-- ORDER MANAGEMENT -->
+        <div class="admin-section">
+
+          <h3>🚚 Order Management</h3>
+
+          <form method="POST"
+                action="/admin/update-order">
+
+            <div class="form-group">
+
+              <label for="order_id">
+                Order ID
+              </label>
+
+              <input type="number"
+                     id="order_id"
+                     name="order_id"
+                     placeholder="e.g. 42"
+                     required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="order_status">
+                Order Status
+              </label>
+
+              <select id="order_status"
+                      name="order_status"
+                      required>
+
+                <option value="PACKED">
+                  📦 Packed
+                </option>
+
+                <option value="SHIPPED">
+                  🚚 Shipped
+                </option>
+
+                <option value="DELIVERED">
+                  ✅ Delivered
+                </option>
+
+              </select>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary">
+
+              Update Order
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <!-- LOGOUT -->
+      <div style="text-align:center;
+                  padding:16px 0 40px;">
+
+        <a href="{{ url_for('logout') }}"
+           class="btn btn-secondary">
+
+          Logout
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-bg"
+       style="background-image: url('{{ url_for("static", filename="images/hero.jpg") }}');">
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <h1>
+        Your Helmet.<br>
+        Safe. <span>Always.</span>
+      </h1>
+
+      <p class="hero-sub">
+
+        Fitaki is a patented helmet utility lock designed
+        to make everyday riding simpler, safer, and more convenient.
+
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="/product#order-form"
+           class="btn btn-primary btn-lg">
+
+          Shop Fitaki →
+
+        </a>
+
+        <a href="/product"
+           class="btn btn-ghost btn-lg">
+
+          Learn More
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TRUST BAND -->
+<div class="trust-band">
+
+  <div class="container">
+
+    <div class="trust-band-inner">
+
+      <div class="trust-stat">
+        <span class="stat-num">1st</span>
+        <span class="stat-label">Patent-Based Product</span>
+      </div>
+
+      <div class="trust-divider"></div>
+
+      <div class="trust-stat">
+        <span class="stat-num">India</span>
+        <span class="stat-label">Designed & Developed</span>
+      </div>
+
+      <div class="trust-divider"></div>
+
+      <div class="trust-stat">
+        <span class="stat-num">₹389</span>
+        <span class="stat-label">Starting Price</span>
+      </div>
+
+      <div class="trust-divider"></div>
+
+      <div class="trust-stat">
+        <span class="stat-num">Easy</span>
+        <span class="stat-label">No-Drill Install</span>
+      </div>
+
+      <div class="trust-divider"></div>
+
+      <div class="trust-stat">
+        <span class="stat-num">Steel</span>
+        <span class="stat-label">Durable Build</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT FEATURE -->
+<section class="home-section">
+
+  <div class="container">
+
+    <div class="product-feature">
+
+      <div class="product-img-wrap fade-up">
+
+        <img src="{{ url_for('static', filename='images/fitaki.jpg') }}"
+             alt="Fitaki Helmet Lock"
+             loading="lazy"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+
+        <div class="img-placeholder" style="display:none;">
+
+          <span class="ph-icon">🏍️</span>
+          <span class="ph-label">Product Image</span>
+
+        </div>
+
+        <span class="product-img-badge">
+          🏆 Patent Granted
+        </span>
+
+      </div>
+
+      <div class="fade-up">
+
+        <span class="section-tag">Our Product</span>
+
+        <h2>Introducing the Fitaki Helmet Lock</h2>
+
+        <p>
+
+          Built around a simple real-world problem —
+          carrying and securing helmets conveniently during everyday travel.
+
+        </p>
+
+        <ul class="feature-list">
+
+          <li>Mounts directly under motorcycle seats</li>
+          <li>Supports most standard helmet straps</li>
+          <li>Durable metal construction</li>
+          <li>No-drill installation design</li>
+          <li>Designed for bikes and scooters</li>
+          <li>Built for practical daily usage</li>
+
+        </ul>
+
+        <div style="display:flex;
+                    gap:12px;
+                    flex-wrap:wrap;
+                    margin-top:var(--space-xl);">
+
+          <a href="/product"
+             class="btn btn-primary">
+
+             View Full Details →
+
+          </a>
+
+          <a href="/product#order-form"
+             class="btn btn-secondary">
+
+             Buy Now
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHY FITAKI -->
+<section class="home-section light">
+
+  <div class="container">
+
+    <div class="section-header centered fade-up">
+
+      <span class="section-tag">Why Fitaki</span>
+
+      <h2>Built Around Everyday Usage</h2>
+
+      <p>
+
+        Designed around convenience, usability,
+        and practical riding experiences.
+
+      </p>
+
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-card fade-up">
+        <span class="why-icon">🔒</span>
+        <h4>Secure Storage</h4>
+        <p>Designed to keep helmets attached safely while parked.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <span class="why-icon">⚡</span>
+        <h4>Quick Access</h4>
+        <p>Easy everyday access without complicated setups.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <span class="why-icon">🔧</span>
+        <h4>Universal Compatibility</h4>
+        <p>Built to work with a wide range of motorcycles and scooters.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <span class="why-icon">💪</span>
+        <h4>Durable Construction</h4>
+        <p>Designed for long-term usage under varying conditions.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <span class="why-icon">🌱</span>
+        <h4>Safety Focused</h4>
+        <p>Encourages more consistent helmet usage during daily travel.</p>
+      </div>
+
+      <div class="why-card fade-up">
+        <span class="why-icon">📦</span>
+        <h4>Easy Installation</h4>
+        <p>Minimal setup with no major vehicle modification required.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="home-section">
+
+  <div class="container">
+
+    <div class="section-header centered fade-up">
+
+      <span class="section-tag">How It Works</span>
+
+      <h2>Simple by Design</h2>
+
+      <p>
+
+        Designed to fit naturally into everyday riding routines.
+
+      </p>
+
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card fade-up">
+
+        <div class="step-num">1</div>
+
+        <h3>Install the System</h3>
+
+        <p>
+          Mount Fitaki using the provided hardware setup.
+        </p>
+
+      </div>
+
+      <div class="step-card fade-up">
+
+        <div class="step-num">2</div>
+
+        <h3>Secure the Helmet</h3>
+
+        <p>
+          Attach your helmet safely while parking or travelling.
+        </p>
+
+      </div>
+
+      <div class="step-card fade-up">
+
+        <div class="step-num">3</div>
+
+        <h3>Ride Conveniently</h3>
+
+        <p>
+          Keep your helmet accessible and protected during everyday use.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+
+  <div class="container">
+
+    <span class="section-tag">
+      Ready to Explore Fitaki?
+    </span>
+
+    <h2>Built for Everyday Riders</h2>
+
+    <p>
+
+      Practical, lightweight, and designed around real usage scenarios.
+
+    </p>
+
+    <div class="cta-actions">
+
+      <a href="/product#order-form"
+         class="btn btn-primary btn-lg">
+
+         Buy Fitaki →
+
+      </a>
+
+      <a href="/contact"
+         class="btn btn-secondary btn-lg">
+
+         Contact Us
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

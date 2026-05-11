@@ -1,0 +1,348 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-wrapper">
+  <div class="container">
+    <div class="product-page">
+
+      <!-- ===== HERO CARD ===== -->
+      <div class="product-hero-card fade-up">
+
+        <div class="product-hero-img">
+          <img src="{{ url_for('static', filename='images/fitaki.jpg') }}"
+               alt="Fitaki Helmet Lock">
+        </div>
+
+        <div class="product-hero-text">
+
+          <span class="section-tag">Patented in India 🇮🇳</span>
+
+          <h2>Fitaki Helmet Lock</h2>
+
+          <p>
+            A smart helmet lock and carrier designed for everyday riders —
+            secure, simple, and built for practical daily use.
+          </p>
+
+          <div class="spec-grid">
+
+            <div class="spec-item">
+              <div class="spec-label">Single Unit</div>
+              <div class="spec-val">₹389</div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-label">Pack of 2</div>
+
+              <div class="spec-val">
+                ₹569
+                <span style="color:var(--brand-light);font-size:0.8rem;">
+                  Save ₹209
+                </span>
+              </div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-label">Delivery</div>
+              <div class="spec-val">Fast Nationwide Delivery</div>
+            </div>
+
+            <div class="spec-item">
+              <div class="spec-label">Shipping</div>
+              <div class="spec-val">Across India</div>
+            </div>
+
+          </div>
+
+          <!-- BUTTONS -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+
+            <a href="#order-form"
+               class="btn btn-primary btn-lg">
+
+              Buy Now →
+
+            </a>
+
+            <a href="https://www.amazon.in/"
+               target="_blank"
+               rel="noopener"
+               class="btn btn-ghost btn-lg">
+
+              Amazon India
+
+            </a>
+
+            <a href="/contact"
+               class="btn btn-secondary btn-lg"
+               style="display:inline-flex;align-items:center;gap:8px;">
+
+              🏭 Bulk Orders
+
+            </a>
+
+          </div>
+
+          <p style="font-size:0.78rem;
+                    color:var(--ink-faint);
+                    margin-top:10px;">
+
+            Need larger quantities?
+            <a href="/contact"
+               style="color:var(--brand);text-decoration:underline;">
+
+               Contact us
+
+            </a>
+            for pricing and assistance.
+
+          </p>
+
+        </div>
+      </div>
+
+      <!-- ===== DETAILS GRID ===== -->
+      <div class="product-sections-grid fade-up">
+
+        <div class="product-section-card">
+
+          <h3>What You Get</h3>
+
+          <ul class="feature-list">
+            <li>Patented design developed in India</li>
+            <li>Compatible with most standard motorcycles</li>
+            <li>No extra padlocks or spare keys needed</li>
+            <li>Strong metal construction with protective coating</li>
+            <li>No-drill installation design</li>
+            <li>Built for long-term everyday usage</li>
+          </ul>
+
+        </div>
+
+        <div class="product-section-card">
+
+          <h3>In the Box</h3>
+
+          <ul class="feature-list">
+            <li>1 × Fitaki Helmet Lock</li>
+            <li>Installation hardware set</li>
+            <li>Quick installation guide</li>
+          </ul>
+
+          <div class="divider" style="margin:20px 0;"></div>
+
+          <h3 style="margin-bottom:12px;">
+            Compatible Bikes
+          </h3>
+
+          <p style="font-size:0.9rem;">
+            Designed to work with most standard motorcycles.
+            Mention your bike model while ordering if needed.
+          </p>
+
+        </div>
+
+        <!-- FAQ -->
+        <div class="product-section-card full">
+
+          <h3>Frequently Asked Questions</h3>
+
+          <div class="faq-list" style="margin-top:16px;">
+
+            <details class="faq-item">
+              <summary>Is Fitaki compatible with all bikes?</summary>
+
+              <p>
+                Fitaki is compatible with most standard motorcycles.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Does Fitaki require keys or electronics?</summary>
+
+              <p>
+                No. It works mechanically without batteries,
+                apps, or electronics.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How long does delivery take?</summary>
+
+              <p>
+                Delivery timelines may vary depending on location
+                and logistics availability.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Will I receive tracking details?</summary>
+
+              <p>
+                Yes. Tracking information is shared after dispatch.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>What payment methods are supported?</summary>
+
+              <p>
+                UPI, cards, wallets, and net banking are supported
+                through Razorpay.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Is Cash on Delivery available?</summary>
+
+              <p>
+                Currently only prepaid online orders are supported.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>Can I place bulk orders?</summary>
+
+              <p>
+                Yes. Contact the team directly for bulk enquiries
+                and partnership discussions.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How do I contact support?</summary>
+
+              <p>
+                Use the contact page or official support channels
+                for assistance.
+              </p>
+            </details>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== ORDER FORM ===== -->
+      <div class="product-section-card full fade-up" id="order-form">
+
+        <span class="section-tag">Secure Checkout</span>
+
+        <h3 style="margin-top:12px;margin-bottom:6px;">
+          Place Your Order
+        </h3>
+
+        <p style="margin-bottom:28px;font-size:0.9rem;">
+          Fill in your details below.
+          Payments are processed securely through Razorpay.
+        </p>
+
+        {% if razorpay_order_id %}
+
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+        <script>
+          (function () {
+
+            var rzp;
+
+            function openRazorpay() {
+
+              var options = {
+                key: "{{ key_id }}",
+                amount: "{{ amount }}",
+                currency: "INR",
+                order_id: "{{ razorpay_order_id }}",
+                name: "Siyologics",
+                description: "Fitaki Helmet Lock",
+
+                handler: function (response) {
+
+                  window.location.href =
+                    "/payment-success?payment_id=" +
+                    response.razorpay_payment_id +
+                    "&order_id={{ session['current_order_id'] }}";
+
+                },
+
+                modal: {
+                  ondismiss: function () {
+
+                    window.location.href =
+                      "/payment-failed?order_id={{ session['current_order_id'] }}";
+
+                  }
+                }
+              };
+
+              rzp = new Razorpay(options);
+              rzp.open();
+            }
+
+            openRazorpay();
+
+            window.retryPayment = function () {
+              if (rzp) rzp.open();
+            };
+
+          })();
+        </script>
+
+        <div class="success-banner" style="margin-bottom:24px;">
+
+          ✅ Order received! Redirecting to secure payment...
+
+          <button onclick="retryPayment()"
+                  class="btn btn-primary btn-sm"
+                  style="margin:0;">
+
+            Pay Now
+
+          </button>
+
+        </div>
+
+        {% endif %}
+
+      </div>
+
+      <!-- ===== BULK ORDER CTA ===== -->
+      <div class="card-soft fade-up"
+           style="text-align:center;padding:var(--space-2xl);">
+
+        <span class="section-tag"
+              style="display:inline-flex;justify-content:center;margin-bottom:14px;">
+
+          Bulk Orders
+
+        </span>
+
+        <h3 style="margin-bottom:12px;">
+          Need Larger Quantities?
+        </h3>
+
+        <p style="max-width:500px;
+                  margin:0 auto var(--space-xl);
+                  font-size:0.95rem;
+                  color:var(--ink-mid);">
+
+          For bulk purchases, partnerships,
+          or business enquiries — get in touch
+          for pricing and support.
+
+        </p>
+
+        <a href="/contact"
+           class="btn btn-primary btn-lg">
+
+          Contact Team →
+
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

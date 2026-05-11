@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="page-wrapper">
+  <div class="container">
+    <div class="media-page">
+
+      <!-- HERO -->
+      <div class="media-hero fade-up">
+
+        <span class="section-tag"
+              style="display:inline-flex;justify-content:center;margin-bottom:14px;">
+
+          Press & Media
+
+        </span>
+
+        <h2>Siyologics in the Media</h2>
+
+        <p style="max-width:580px;margin:0 auto;">
+
+          Product demonstrations, public showcases,
+          and media highlights featuring Fitaki
+          and other innovation concepts from Siyologics.
+
+        </p>
+
+      </div>
+
+      <!-- VIDEO SECTION -->
+      <div class="media-section-card fade-up">
+
+        <h3 style="margin-bottom:var(--space-md);">
+          Product Demonstrations
+        </h3>
+
+        <p style="margin-bottom:22px;">
+
+          Watch Fitaki in action — installation,
+          usage, and real-world product demonstrations.
+
+        </p>
+
+        <div style="display:grid;
+                    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+                    gap:20px;">
+
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/oMl8FRZE6XY"
+              title="Fitaki Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/JpbTk-9nhys"
+              title="Installation Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/mpn6JcwEZWw"
+              title="Fitaki Product Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/Q84lFzGACiw"
+              title="Usage Demonstration"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MARKETPLACES -->
+      <div class="media-section-card fade-up">
+
+        <h3 style="margin-bottom:var(--space-md);">
+          Explore Fitaki Online
+        </h3>
+
+        <p style="margin-bottom:22px;">
+
+          Fitaki can be explored through our official website
+          and selected online marketplaces.
+
+        </p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:14px;">
+
+          <a href="https://www.amazon.in/"
+             target="_blank"
+             class="btn btn-secondary">
+
+             View on Amazon
+
+          </a>
+
+          <a href="https://www.flipkart.com/"
+             target="_blank"
+             class="btn btn-secondary">
+
+             View on Flipkart
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT GALLERY -->
+      <div class="media-section-card fade-up">
+
+        <h3 style="margin-bottom:var(--space-md);">
+          Product Gallery
+        </h3>
+
+        <p style="margin-bottom:18px;">
+
+          A closer look at Fitaki,
+          product usage, and development visuals.
+
+        </p>
+
+        <div class="photo-grid">
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki1.jpg') }}"
+                 alt="Fitaki Lock"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki1.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki2.jpg') }}"
+                 alt="Product View"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki2.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki3.jpg') }}"
+                 alt="Usage Demo"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki3.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki.jpg') }}"
+                 alt="Fitaki Detail"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki4.jpg') }}"
+                 alt="Fitaki Product"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki4.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki5.jpg') }}"
+                 alt="Installation"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki5.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki6.jpg') }}"
+                 alt="Fitaki Detail"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki6.jpg') }}','_blank')">
+          </div>
+
+          <div style="overflow:hidden;border-radius:var(--radius-md);background:var(--bg-soft);">
+            <img src="{{ url_for('static', filename='images/fitaki7.jpg') }}"
+                 alt="Installed Product"
+                 loading="lazy"
+                 style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+                 onclick="window.open('{{ url_for('static', filename='images/fitaki7.jpg') }}','_blank')">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MEDIA ENQUIRIES -->
+      <div class="card-soft fade-up"
+           style="text-align:center;">
+
+        <span class="section-tag"
+              style="display:inline-flex;
+                     justify-content:center;
+                     margin-bottom:14px;">
+
+          Media Enquiries
+
+        </span>
+
+        <h3 style="margin-bottom:12px;">
+          Interested in covering Siyologics?
+        </h3>
+
+        <p style="max-width:500px;
+                  margin:0 auto var(--space-xl);">
+
+          Open to interviews, product showcases,
+          collaboration opportunities, and media interactions.
+
+        </p>
+
+        <div style="display:flex;
+                    gap:14px;
+                    justify-content:center;
+                    flex-wrap:wrap;">
+
+          <a href="/contact"
+             class="btn btn-primary">
+
+             Contact
+
+          </a>
+
+          <a href="mailto:hello@example.com"
+             class="btn btn-secondary">
+
+             Email Directly
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

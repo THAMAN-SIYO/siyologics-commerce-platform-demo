@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Siyologics — Consumer innovation platform focused on safety-first engineering solutions.">
+
+  <title>Siyologics</title>
+
+  <!-- Satoshi via Fontshare -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+  >
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <a href="/" class="logo">
+
+      <img
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="Siyologics Logo"
+        loading="eager"
+        style="height:40px;width:auto;display:block;"
+      >
+
+      <span class="logo-fallback">
+        Siyo<span>.</span>
+      </span>
+
+    </a>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/product">Product</a>
+      <a href="/patents">Patents</a>
+      <a href="/media">Media</a>
+      <a href="/contact">Contact</a>
+
+      <a href="/product#order-form" class="nav-cta">
+        Buy Now
+      </a>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="nav-overlay"></div>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+    <div class="flash-wrap">
+
+      {% for message in messages %}
+        <div class="flash-msg">
+          {{ message }}
+        </div>
+      {% endfor %}
+
+    </div>
+
+  {% endif %}
+{% endwith %}
+
+<!-- Main Content -->
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+
+        <img
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="Siyologics"
+          loading="lazy"
+          style="height:44px;width:auto;display:block;margin-bottom:16px;"
+        >
+
+        <p>
+          Purpose-driven consumer innovation from Kerala, India.
+          Building practical, people-first engineering solutions.
+        </p>
+
+      </div>
+
+      <!-- Company Links -->
+      <div class="footer-col">
+
+        <h5>Company</h5>
+
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/patents">Patents</a>
+        <a href="/media">Media</a>
+        <a href="/contact">Contact</a>
+
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+
+        <h5>Get In Touch</h5>
+
+        <a href="mailto:hello@example.com">
+          hello@example.com
+        </a>
+
+        <a href="mailto:support@example.com">
+          support@example.com
+        </a>
+
+        <a href="https://wa.me/910000000000"
+           target="_blank"
+           rel="noopener">
+
+          WhatsApp Support
+
+        </a>
+
+        <a href="/legal">
+          Legal / Privacy
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+
+      <span>
+        © {{ year if year else "2026" }}
+        Siyologics · India
+      </span>
+
+      <div>
+        <a href="/legal">Legal</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
